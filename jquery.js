@@ -1,10 +1,12 @@
 var sentences = [
-	'Raindrop', 
-	'(DRIP)', 'DROP TOP', 'eating some cookies in a hotbox'];
+	'Raindrop', //0
+	'(DRIP)', //1
+	'DROP TOP', //2
+	'eating some cookies in a hotbox'];
+	append.sentenceCounter
 
 sentenceCounter = 0;
-letterCounter = 0;
-currentsentence = '';
+
 
 $(document).keydown(function(event) {
 	$( "#yellow-block" ).animate({
@@ -40,10 +42,3 @@ $(document).on("keypress", function(event){
 			$("#" + event.which).css({backgroundColor: "#f5f5f5"});
 		})
 });
-
-function handleSentences() {
-	$('#sentences').empty();
-	currentsentence = sentences
-	$('#sentences').append(sentences[sentencesCounter]);
-	sentenesCounter++;
-}
