@@ -1,11 +1,21 @@
 var sentences =[
 	
+    'Raindrop',
+    '(DRIP)',
+    'droptop.',
+    'Eatin some cookies from a lunchbox',
+    'and we got pizza thats a hot poc',
+    'We came from nothing to somthing ninja!',
+    'call up the gang that come and get cha!'
+
+    /*
 	'Ten ate neite ate nee enet ite ate inet ent eate',
     'Too ato too nOt enot one totA not anot tOO aNot',
     'oat itain oat tain nate eate tea anne inant nean',
     'itant eate anot eat nato inate eat anot tain eat',
     'nee ene ate ite tent tiet ent ine ene ete ene ate'
-	
+	*/
+
 	];
 
 var keyPress;
@@ -79,6 +89,18 @@ function push() {
     }
 };
 
+function gameEnd() {
+    var elapsed = new Date() - start;
+    var wpmLapse = elapsed / 60000;
+    var minutes = Math.round(wpmLapse);
+    var speed = (numberOfWords / minutes - 2 * numWrong);
+    var correct = confirm('Speed: ' + speed + ' WPM.' + '\nErrors: ' + numWrong + '\nTry again???');
+    if (yes == true) {
+        location.reload();
+    } else {
+        alert('Ok');
+    }  
+};
 
 
 
